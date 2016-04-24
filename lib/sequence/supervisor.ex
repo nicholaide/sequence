@@ -8,7 +8,7 @@ defmodule Sequence.Supervisor do
   def start_workers(sup, initial_number) do
     # Start the stash worker
     {:ok, stash} = 
-      Supervisor.start_child(sup, worker(Sequence.Stash,[initial_number]))
+      Supervisor.start_child(sup, worker(Sequence.Stash,[initial_number]) )
     # and then the subsupervisor for the actual sequence server
     Supervisor.start_child(sup, supervisor(Sequence.Subsupervisor, [stash]))
   end
