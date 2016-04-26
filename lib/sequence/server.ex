@@ -1,6 +1,7 @@
 defmodule Sequence.Server do
   use GenServer # this handles all the callbacks
   
+  @vsn "0"
   ####
   # External API
   
